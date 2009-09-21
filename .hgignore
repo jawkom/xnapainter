@@ -1,0 +1,18 @@
+syntax: glob
+*.orig
+*.rej
+*.~
+*.o
+*.suo
+*.cache
+*.user
+*.pfx
+*.cachefile
+*.ccgame
+*.manifest
+*.exe
+*Debug*
+*.deploy
+*.xnb
+*.application
+*bin*

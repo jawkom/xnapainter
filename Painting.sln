@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Painting", "Painting\Painting.csproj", "{E3FAB8D9-3E95-46AC-86BD-52C756A12AC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3FAB8D9-3E95-46AC-86BD-52C756A12AC0}.Debug|x86.ActiveCfg = Debug|x86
+		{E3FAB8D9-3E95-46AC-86BD-52C756A12AC0}.Debug|x86.Build.0 = Debug|x86
+		{E3FAB8D9-3E95-46AC-86BD-52C756A12AC0}.Release|x86.ActiveCfg = Release|x86
+		{E3FAB8D9-3E95-46AC-86BD-52C756A12AC0}.Release|x86.Build.0 = Release|x86
+		{5A4E7B52-195E-4D91-AEE2-582A9BD23839}.Debug|x86.ActiveCfg = Debug|x86
+		{5A4E7B52-195E-4D91-AEE2-582A9BD23839}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
