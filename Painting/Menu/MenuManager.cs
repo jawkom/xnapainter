@@ -34,17 +34,17 @@ namespace Painting
                 {
                     //If no menu is active and the menu button is pressed,
                     //try to open the main menu.
-                    Activate("Main");
+                    Activate(MainMenu.Name);
                     CursorManager.SetCursorType(PointerCursor.Type);
                 }
             }
 
             foreach (KeyValuePair<string, Menu> kvp in menuList)
             {
-                if (Mailbox.CheckMailbox(kvp.Value.Name + Mailbox.MenuOpenSuffix))
+                if (Mailbox.CheckMailbox(kvp.Value.InstanceName() + Mailbox.MenuOpenSuffix))
                     Activate(kvp.Value);
 
-                if (Mailbox.CheckMailbox(kvp.Value.Name + Mailbox.MenuCloseSuffix))
+                if (Mailbox.CheckMailbox(kvp.Value.InstanceName() + Mailbox.MenuCloseSuffix))
                     Deactivate(kvp.Value);
             }
 
@@ -68,15 +68,12 @@ namespace Painting
 
         public static void Register(Menu menu)
         {
-            if (menu.Name == null)
-                throw new Exception("Menu was not initialized before registering.");
-
-            menuList.Add(menu.Name, menu);
+            menuList.Add(menu.InstanceName(), menu);
         }
 
         public static void Activate(Menu menu)
         {
-            Activate(menu.Name);
+            Activate(menu.InstanceName());
         }
 
         public static void Activate(string name)
@@ -88,13 +85,13 @@ namespace Painting
 
         public static void Deactivate(Menu menu)
         {
-            Deactivate(menu.Name);
+            Deactivate(menu.InstanceName());
         }
 
         public static void Deactivate(string name)
         {
             for (int i = 0; i < activeMenuList.Count; i++)
-                if (activeMenuList[i].Name == name)
+                if (activeMenuList[i].InstanceName() == name)
                     activeMenuList.RemoveAt(i);
         }
     }

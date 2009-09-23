@@ -9,21 +9,28 @@ namespace Painting
 {
     class ExitMenu:Menu
     {
-        EventButton yesButton;
-        EventButton noButton;
+        public const string Name = "Exit";
+
+        IntBoxButton yesButton;
+        IntBoxButton noButton;
 
         Texture2D background;
 
         public ExitMenu()
         {
-            yesButton = new EventButton("yesButton", Mailbox.Name.ExitProgram, 200, 100);
-            noButton = new EventButton("noButton", Mailbox.Name.CloseActiveMenu, 300, 100);
+            yesButton = new IntBoxButton("yesButton", Mailbox.Name.ExitProgram, 200, 100);
+            noButton = new IntBoxButton("noButton", Mailbox.Name.CloseActiveMenu, 300, 100);
             List<Button> buttonList = new List<Button>(2);
-            buttonList.Add(yesButton);
             buttonList.Add(noButton);
+            buttonList.Add(yesButton);            
 
             background = ContentLibrary.Get("background70");
-            base.Initialize("Exit", noButton, buttonList);
+            base.RegisterButtons(buttonList);
+        }
+
+        public override string InstanceName()
+        {
+            return Name;
         }
 
         public override void Draw()

@@ -9,24 +9,31 @@ namespace Painting
 {
     class MainMenu:Menu
     {
-        EventButton increaseSize;
-        EventButton decreaseSize;
-        EventButton exitButton;
+        public const string Name = "Main";
+
+        IntBoxButton increaseSize;
+        IntBoxButton decreaseSize;
+        StringBoxButton exitButton;
 
         Texture2D background;
 
         public MainMenu()
         {
-            increaseSize = new EventButton("plusButton", Mailbox.Name.IncreaseBrushSize, 400, 200);
-            decreaseSize = new EventButton("minusButton", Mailbox.Name.DecreaseBrushSize, 200, 200);
-            exitButton = new EventButton("exitButton", "ExitMenuOpen", 0, 0);
+            increaseSize = new IntBoxButton("plusButton", Mailbox.Name.IncreaseBrushSize, 400, 200);
+            decreaseSize = new IntBoxButton("minusButton", Mailbox.Name.DecreaseBrushSize, 200, 200);
+            exitButton = new StringBoxButton("exitButton", "ExitMenuOpen", 0, 0);
             List<Button> buttonList = new List<Button>(3);
             buttonList.Add(increaseSize);
             buttonList.Add(decreaseSize);
             buttonList.Add(exitButton);
 
-            background = ContentLibrary.Get("background70");
-            base.Initialize("Main", exitButton, buttonList);
+            background = ContentLibrary.Get("background70");;
+            base.RegisterButtons(buttonList);
+        }
+
+        public override string InstanceName()
+        {
+            return Name;
         }
 
         public override void Draw()

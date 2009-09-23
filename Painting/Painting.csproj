@@ -89,11 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button\Buttons\StringBoxButton.cs" />
     <Compile Include="DrawingObject.cs" />
     <Compile Include="Button\Label.cs" />
     <Compile Include="Cursor\CursorManager.cs" />
     <Compile Include="Cursor\Cursors\BrushCursor.cs" />
-    <Compile Include="Button\Buttons\EventButton.cs" />
+    <Compile Include="Button\Buttons\IntBoxButton.cs" />
     <Compile Include="Button\Button.cs" />
     <Compile Include="DrawingLayer.cs" />
     <Compile Include="Information\ContentLibrary.cs" />

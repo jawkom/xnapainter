@@ -9,10 +9,6 @@ namespace Painting
 {
     abstract class Menu
     {
-        //Name
-        public string Name { get { return name; } }
-        private string name;
-
         //DefaultButton
         public Button DefaultButton { get { return defaultButton; } }
         private Button defaultButton;
@@ -20,14 +16,17 @@ namespace Painting
         //Traits that each menu will have to initialize.
         private List<Button> buttonList; //extending classes should register their buttons with the ButtonList
 
-        protected void Initialize(string name, Button defaultButton, List<Button> buttonList)
+        public abstract string InstanceName();
+
+        protected void RegisterButtons(List<Button> buttonList)
         {
-            this.name = name;
-            this.defaultButton = defaultButton;
+            if (buttonList.Count > 0)
+                this.defaultButton = buttonList[0];
+
             this.buttonList = buttonList;
         }
 
-        public void Update()
+        virtual public void Update()
         {
             for (int i = 0; i < buttonList.Count; i++)
                 buttonList[i].Update();
