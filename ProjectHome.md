@@ -1,0 +1,1 @@
+A simple tool to make it easy to paint and play back the creation of the painting. Written in C# for the XNA framework.
